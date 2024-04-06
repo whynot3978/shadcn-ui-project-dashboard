@@ -17,7 +17,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, {'debug-screens': process.env.NODE_ENV==='development'})}>{children}</body>
+      <body 
+        className={cn(
+          'min-h-screen w-full bg-white slate-900 text-slate-900 flex',
+          inter.className,
+          {
+            'debug-screens': process.env.NODE_ENV==='development'
+          }
+        )}
+      >
+        {/* Боковая панель */}
+
+        {/* Основное содержимое страницы */}
+
+        <div className="w-full p-8">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
