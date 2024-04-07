@@ -27,6 +27,7 @@ export default function RootLayout({
         )}
       >
         {/* Боковая панель */}
+        <p className="border">Боковая панель</p>
 
         {/* Основное содержимое страницы */}
 
