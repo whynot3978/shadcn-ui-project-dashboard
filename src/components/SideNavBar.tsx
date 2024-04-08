@@ -23,57 +23,64 @@ import {
   } from "lucide-react"
 import { Button } from './ui/button'
 
+import { useWindowWidth } from '@react-hook/window-size'
+
 type Props = {}
 
 const SideNavBar = ({}: Props) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const onlyWidth = useWindowWidth();
+  const mobileWidth = onlyWidth < 768;
 
   function toggleSidebar() {
     setIsCollapsed(!isCollapsed);
   }
 
   return (
-      <div className='relative min-w-[80px] border-r px-3 pb-10 pt-24'>
-          <div className='absolute right-[-20px] top-7'>
-            <Button
-              variant='secondary' 
-              className='rounded-full p-2'
-              onClick={toggleSidebar}
-            >
-              <ChevronRight />
-            </Button>
-          </div>
+    <div className='relative min-w-[80px] border-r px-3 pb-10 pt-24'>
+      {mobileWidth}
 
-          <Nav
-          isCollapsed={isCollapsed}
-          links={[
-            {
-              title: "Боковая панель",
-              href: "/",
-              icon: LayoutDashboard,
-              variant: "default"
-            },
-            {
-              title: "Пользователи",
-              href: "/users",
-              icon: UsersRound,
-              variant: "ghost"
-            },
-            {
-              title: "Заказы",
-              href: "/orders",
-              icon: ShoppingCart,
-              variant: "ghost"
-            },
-            {
-              title: "Настройки",
-              href: "/settings",
-              icon: Settings,
-              variant: "ghost",
-            }
-          ]}
-        />
+      <div className='absolute right-[-20px] top-7'>
+        <Button
+          variant='secondary' 
+          className='rounded-full p-2'
+          onClick={toggleSidebar}
+        >
+          <ChevronRight />
+        </Button>
       </div>
+
+      <Nav
+        isCollapsed={mobileWidth ? true : isCollapsed}
+        links={[
+          {
+            title: "Боковая панель",
+            href: "/",
+            icon: LayoutDashboard,
+            variant: "default"
+          },
+          {
+            title: "Пользователи",
+            href: "/users",
+            icon: UsersRound,
+            variant: "ghost"
+          },
+          {
+            title: "Заказы",
+            href: "/orders",
+            icon: ShoppingCart,
+            variant: "ghost"
+          },
+          {
+            title: "Настройки",
+            href: "/settings",
+            icon: Settings,
+            variant: "ghost",
+          }
+        ]}
+      />
+    </div>
   )
 }
 
