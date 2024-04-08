@@ -55,7 +55,7 @@ const SideNavBar = ({}: Props) => {
         isCollapsed={mobileWidth ? true : isCollapsed}
         links={[
           {
-            title: "Боковая панель",
+            title: "Панель управления",
             href: "/",
             icon: LayoutDashboard,
             variant: "default"
