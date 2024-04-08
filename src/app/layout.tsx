@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "../lib/utils";
+import SideNavBar from "../components/SideNavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,8 @@ export default function RootLayout({
         )}
       >
         {/* Боковая панель */}
-        <p className="border">Боковая панель</p>
+        {/* <p className="border">Боковая панель</p> */}
+        <SideNavBar />
 
         {/* Основное содержимое страницы */}
 
