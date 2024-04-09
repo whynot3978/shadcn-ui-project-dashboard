@@ -1,6 +1,7 @@
 import { BarChart } from "@/components/BarChart";
 import { Card, CardContent, CardProps } from "@/components/Card";
 import { PageTitle } from "@/components/PageTitle";
+import SalesCard, { SalesProps } from "@/components/ui/SalesCard";
 import { Activity, CreditCard, DollarSign, Users } from "lucide-react";
 import Image from "next/image";
 
@@ -29,7 +30,35 @@ const CardData: CardProps[] = [
     description: "+20.1% по сравнению с прошлым часом",
     icon: Activity
   }
-]
+];
+
+const userSalesData: SalesProps[] = [
+  {
+    name: 'Алиса Валиева',
+    email: 'alisa.valieva@mail.ru',
+    saleAmount: '+$1,999.00'
+  },
+  {
+    name: 'Дмитрий Карпов',
+    email: 'dmitriy.karpov@mail.ru',
+    saleAmount: '+$1,999.00'
+  },
+  {
+    name: 'Василиса Короткова',
+    email: 'vasilisa.korotkova@mail.ru',
+    saleAmount: '+$39.00'
+  },
+  {
+    name: 'Сергей Булавкин',
+    email: 'sergey.bulavkin@mail.ru',
+    saleAmount: '+$299.00'
+  },
+  {
+    name: 'Карина Куликова',
+    email: 'karina.kulikova@mail.ru',
+    saleAmount: '+$39.00'
+  }
+];
 
 export default function Home() {
   return (
@@ -55,13 +84,22 @@ export default function Home() {
           <BarChart />
         </CardContent>
 
-        <CardContent>
+        <CardContent className="flex justify-between gap-4">
           <section>
             <p>Недавние продажи</p>
             <p className="text-sm text-gray-400">
               Вы совершили 256 продаж в этом месяце
             </p>
           </section>
+
+          {userSalesData.map((d, i) => (  // d-data, i-index
+            <SalesCard
+              key={i}
+              name={d.name}
+              email={d.email}
+              saleAmount={d.saleAmount}
+            />
+          ))}
         </CardContent>
       </section>
     </div>
