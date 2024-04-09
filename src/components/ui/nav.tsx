@@ -24,7 +24,7 @@ interface NavProps {
   }[]
 }
 
-const Nav = ({ links, isCollapsed }: NavProps) => {
+export function Nav ({ links, isCollapsed }: NavProps) {
   const pathName = usePathname();
 
   return (
@@ -97,5 +97,3 @@ const Nav = ({ links, isCollapsed }: NavProps) => {
     
   )
 }
-
-export default Nav

@@ -1,5 +1,6 @@
-import Card, { CardProps } from "@/components/Card";
-import PageTitle from "@/components/PageTitle";
+import { BarChart } from "@/components/BarChart";
+import { Card, CardContent, CardProps } from "@/components/Card";
+import { PageTitle } from "@/components/PageTitle";
 import { Activity, CreditCard, DollarSign, Users } from "lucide-react";
 import Image from "next/image";
 
@@ -46,6 +47,14 @@ export default function Home() {
             label={d.label}
           />
         ))}
+      </section>
+
+      <section className="grid grid-cols-1 gap-4 transition-all lg:grid-cols-2">
+        <CardContent>
+          <p className="p-4 font-semibold">Обзор</p>
+
+          <BarChart />
+        </CardContent>
       </section>
     </div>
   );

@@ -2,7 +2,7 @@
 'use client'
 
 import { useState } from 'react'
-import Nav from './ui/nav'
+import { Nav } from './ui/nav'
 
 import {
     AlertCircle,
@@ -25,9 +25,9 @@ import { Button } from './ui/button'
 
 import { useWindowWidth } from '@react-hook/window-size'
 
-type Props = {}
+export type Props = {}
 
-const SideNavBar = ({}: Props) => {
+export function SideNavBar ({}: Props) {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const onlyWidth = useWindowWidth();
@@ -83,5 +83,3 @@ const SideNavBar = ({}: Props) => {
     </div>
   )
 }
-
-export default SideNavBar

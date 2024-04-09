@@ -11,7 +11,7 @@ export type CardProps = {
     description: string
 }
 
-const Card = (props: CardProps) => {
+export function Card (props: CardProps) {
     return (
         <CardContent>
             <section className="flex justify-between gap-2">
@@ -30,7 +30,7 @@ const Card = (props: CardProps) => {
     )
 }
 
-const CardContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
+export function CardContent (props: React.HTMLAttributes<HTMLDivElement>) {
     return (
         <div
             {...props}
@@ -41,5 +41,3 @@ const CardContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
         />
     )
 }
-
-export default Card
