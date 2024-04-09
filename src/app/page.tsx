@@ -52,8 +52,16 @@ export default function Home() {
       <section className="grid grid-cols-1 gap-4 transition-all lg:grid-cols-2">
         <CardContent>
           <p className="p-4 font-semibold">Обзор</p>
-
           <BarChart />
+        </CardContent>
+
+        <CardContent>
+          <section>
+            <p>Недавние продажи</p>
+            <p className="text-sm text-gray-400">
+              Вы совершили 256 продаж в этом месяце
+            </p>
+          </section>
         </CardContent>
       </section>
     </div>
